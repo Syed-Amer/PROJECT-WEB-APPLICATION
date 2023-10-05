@@ -43,20 +43,20 @@ if (isset($_POST['uname']) && isset($_POST['password']) && isset($_POST['email']
     if (empty($uname)) {
         header("Location: index.php?error=User Name is required");
         exit();
-    } 
+    }
 
     // Give error if Email is empty
     elseif (empty($email)) {
         header("Location: index.php?error=Email is required");
         exit();
-    } 
-    
+    }
+
     // Give error if password is empty
     elseif (empty($passw)) {
         header("Location: index.php?error=Password is required");
         exit();
-    } 
-    
+    }
+
     // Run this if all form is filled
     else {
         // Check if the username is already in used

@@ -1,0 +1,7 @@
+(fill form to register) register/index.php -> 
+(get data from previous to insert to database) register/register.php -> 
+have account? -> 
+(fill form to login) login/index.php -> 
+(get data from previous and check if it exists in database or not? if exists go to next. if not give error) login/login.php -> 
+(fill link and choose download format) ytdl/index.php -> 
+(verify link, download and push to database) ytdl/download.php

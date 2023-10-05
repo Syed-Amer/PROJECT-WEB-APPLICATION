@@ -19,13 +19,14 @@ body {
 h1 {
     text-align: center;
     margin-bottom: 50px;
+    height: 86px;
+    width: 476px;
 
 }
 
 form {
     color: #f5c2e7;
     background-color: #1e2030;
-    border: 2px solid black;
     box-shadow: 0 0 10px black;
     padding-bottom: 10px;
     border-radius: 10px;

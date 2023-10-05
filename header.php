@@ -18,5 +18,3 @@
     </nav>
     <div class="header-sm"><img src="image/github-logo.png" alt=""></div>
   </header>
-</body>
-</html>

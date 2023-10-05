@@ -1,49 +1,10 @@
 <?php
 include "../dbconnect.php";
 session_start();
-$username = $_SESSION['uname'];
 
-echo "$username<br>";
-$download = "";
-
-// Function to get user id
-function getUserId($username, $conn)
-{
-    $query = "SELECT user_id FROM Users WHERE username = '$username'";
-    $result = $conn->query($query);
-    if (!$result) {
-        die("Query failed: " . $conn->error);
-    }
-
-    // Fetch the result
-    $row = $result->fetch_assoc();
-    return $row['user_id'];
-}
-
-function insertToDatabase($userId, $conn, $title, $videoLink, $videoFormat)
-{
-    $videoLink = $conn->real_escape_string($videoLink);
-    $title = $conn->real_escape_string($title);
-
-    // Use single quotes around string values in the SQL query
-    $query = "INSERT INTO Videos (user_id, title, video_url, download_format) VALUES (?, ?, ?, ?)";
-
-    $stmt = $conn->prepare($query);
-
-    // Bind parameters and execute the statement
-    $stmt->bind_param("isss", $userId, $title, $videoLink, $videoFormat);
-
-    if ($stmt->execute()) {
-        // Insertion successful
-        return true;
-    } else {
-        // Insertion failed
-        return false;
-    }
-}
-// get user id
-$userId = getUserId($username, $conn);
-echo "$userId";
+// get user variable session
+$userId = $_SESSION['userId'];
+$username = $_SESSION['username'];
 
 // check if form is filled
 if (isset($_POST['video_format']) && isset($_POST['video_link'])) {
@@ -71,7 +32,7 @@ if (isset($_POST['video_format']) && isset($_POST['video_link'])) {
             if ($returnCode === 0) {
 
                 // update to database
-                if (insertToDatabase($userId, $conn, $title, $videoLink, $videoFormat)) {
+                if (insertToDatabase($userId, $conn, $title, $videoLink, $videoFormat, $filePath .'.mp3')) {
                     $encodePath = rawurlencode($filePath);
                     header("Location: index.php?download=$encodedTitle.mp3");
                     exit();

@@ -1,3 +1,19 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['authenticated'])) {
+    // Redirect the user to the login page if not authenticated
+    header("Location: ../login/index.php");
+    exit();
+}
+if (isset($_GET['history'])) {
+    // Redirect to the history page
+    $_SESSION['test'] = 'asd';
+    header("Location: ../history/index.php");
+    exit(); // Make sure to exit to prevent further script execution
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -34,7 +50,9 @@
             $downloadedFileName = $_GET['download'];
         }
         ?>
-        <a href="/projectWeb/downloads/<?php echo $downloadedFileName; ?>" class="button">Download </a>
+        <a href="/projectWeb/downloads/<?php echo $downloadedFileName; ?>" class="button" download=" <?php echo $downloadedFileName; ?>">Download </a>
+        <a href="?history=1">history</a>
+        <a href="logout.php">logout</a>
     </form><br>
 
 </body>

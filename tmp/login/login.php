@@ -1,6 +1,7 @@
 <?php
 session_start();
 include "../dbconnect.php";
+$currentSessionID = session_id();
 
 // Check if user filled the form
 if (isset($_POST['uname']) && isset($_POST['password'])) {
@@ -17,7 +18,8 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
     $uname = validate($_POST['uname']);
     $passw = validate($_POST['password']);
 
-    $_SESSION['uname'] = $uname;
+    // get user_Id from the username
+    $userId = getUserId($uname, $conn);
 
     //function to check if the input is exist or not
     function matches($uname, $passw, $conn)
@@ -28,45 +30,52 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
 
         // sql script to run
         $query = "SELECT COUNT(*) as count FROM Users WHERE username = '$uname' AND password = '$passw'";
-        
+
         // execute
         $result = $conn->query($query);
 
-        if(!$result) {
+        if (!$result) {
             die("Query failed" . $conn->error);
         }
 
         //fetch result
         $row = $result->fetch_assoc();
-        
+
         // return 
         return $row['count'] > 0;
     }
 
-    
+
 
     // Give error if User Name is empty
     if (empty($uname)) {
         header("Location: index.php?error=User Name is required");
         exit();
-    } 
-    
+    }
+
     // Give error if password is empty
     elseif (empty($passw)) {
         header("Location: index.php?error=Password is required");
         exit();
-    } 
+    }
 
     // Run this if form is filled
-    else{
-        if(!matches($uname, $passw, $conn)){
+    else {
+        if (!matches($uname, $passw, $conn)) {
             header("Location: index.php?error=Wrong username or password");
             exit();
-        }
-        else {
+        } else {
+            
+            // create a session variables
+            $_SESSION['username'] = $uname;
+            $_SESSION['userId'] = $userId;
+            $_SESSION['authenticated'] = true;
 
+            // redirect to youtube downloader
             header("Location: ../ytdl/index.php");
             exit();
         }
     }
+} else {
+    echo "No data";
 }
