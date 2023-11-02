@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital@1&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url('../image/login-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.section {
+    font-family: 'JetBrains Mono', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px);
+    width: 100%;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section form {
+    color: #f5c2e7;
+    background-color: #1e2030;
+    border: 2px solid black;
+    box-shadow: 0 0 10px black;
+    width: 450px;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.section input {
+    background-color: #585b70;
+    color: #eff1f5;
+    font-size: 'JetBrains Mono', monospace;
+    font-style: italic;
+    display: block;
+    width: 95%;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 4px;
+}
+
+.section a {
+    color: #ef9f76;
+}
+
+.section a:active {
+    color: #8caaee;
+}
+
+.section button {
+    color: #11111b;
+    float: right;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    background-color: #dd7878;
+    margin-top: 20px;
+}
+
+.error {
+    color: #e64553;
+}
+
+.section .success {
+    color: #8caaee;
+    margin-bottom: 20px;
+}

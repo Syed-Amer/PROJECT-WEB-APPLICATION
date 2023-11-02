@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital@1&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url('../image/login-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.header-main {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #1e2030;
+    display: flex;
+    justify-content: center;
+}
+
+.header-logo {
+    height: 100%;
+    float: left;
+}
+
+.header-logo img {
+    position: absolute;
+    left: 20px;
+    width: 60px;
+    margin-left: 40px;
+}
+
+.header-nav {
+    height: 100%;
+    line-height: 80px;
+    width: fit-content;
+    margin-right: 30px;
+}
+
+.header-nav ul {
+    list-style: none;
+}
+
+.header-nav ul li {
+    display: inline;
+    float: left;
+    margin: 0 10px;
+}
+
+.header-nav ul li a {
+    padding: 0 10px;
+}
+
+.header-nav a {
+    text-decoration: none;
+    color: #f38ba8;
+}
+
+.header-nav a:active {
+    color: #8caaee;
+}
+
+.header-sm {
+    position: absolute;
+    right: 10px;
+    height: 100%;
+}
+
+.header-sm img {
+    width: 40px;
+    margin-top: 20px;
+}

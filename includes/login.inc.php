@@ -21,19 +21,21 @@ if (isset($_POST['submit'])) {
     $column = (filter_var($usernameOrEmail, FILTER_VALIDATE_EMAIL)) ? "email" : "username";
 
     // check wether the username exist or not
-    if (!exists($conn, $usernameOrEmail, $column)) {
+    if (!exists($conn, $usernameOrEmail, $column, "Users")) {
         header("Location: ../login.php?error=User not exist");
         exit();
     }
 
     // check wether user login successfully by checking if the password is correct or not
-    if (login($conn, $usernameOrEmail, $column, $password)) {
-        header("Location: ../ytdl.php");
-        exit();
-    } else {
-        header("Location: ../login.php?error=Wrong password");
-        exit();
-    }
+    login($conn, $usernameOrEmail, $column, $password, "Users");
+
+    $_SESSION['usernameOrEmail'] = $usernameOrEmail;
+    $_SESSION['login'] = true;
+    $_SESSION['user_id'] = getUserId($conn, $usernameOrEmail);
+
+    header("Location: ../ytdl.php");
+    exit();
+
 } else {
     header("Location: ../login.php");
 }

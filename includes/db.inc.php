@@ -4,11 +4,9 @@ ini_set('display_errors', 1);
 
 $serverName = "localhost";
 $username= "root";
-$password = "sydamr";
+$password = "";
 $databaseName = "youtube_downloader";
 
-$conn = mysqli_connect($serverName, $username, $password, $databaseName);
-
-if($conn) {
-    echo "db connect sucess";
+if(!$conn = mysqli_connect($serverName, $username, $password, $databaseName)){
+    echo "error connecting";
 }

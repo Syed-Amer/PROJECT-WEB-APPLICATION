@@ -24,18 +24,18 @@ if (isset($_POST['submit'])) {
     }
 
     // check if the username has already taken
-    if (exists($conn, $uname, "username")) {
+    if (exists($conn, $uname, "username", "Users")) {
         header("Location: ../register.php?error=Username already taken");
         exit();
     }
 
     // check if the email has already taken
-    if (exists($conn, $email, "email")) {
+    if (exists($conn, $email, "email", "Users")) {
         header("Location: ../register.php?error=Email already use");
         exit();
     }
 
-    createUser($conn, $uname, $email, $password);
+    createUser($conn, $uname, $email, $password, "Users");
     header("Location: ../register.php?success=Account created successfully");
     exit();
 
