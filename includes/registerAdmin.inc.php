@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
 
     // check if the form has empty field
     if (!empty($empty = emptyInput($uname, $email, $password, $rePassword))) {
-        header("Location: ../register.php?error=" . $empty);
+        header("Location: ../registerAdmin.php?error=" . $empty);
         exit();
     }
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>History</title>
-    <link rel="stylesheet" href="css/history.css">
+    <link rel="stylesheet" href="css/historyAdmin.css">
     <link rel="stylesheet" href="css/header.css">
 </head>
 
@@ -21,16 +21,31 @@
             <form action="includes/deleteDownloaded.inc.php" method="post">
                 <table class="table-history">
                     <tr>
-                        <th>Title</th>
-                        <th>Download Format</th>
-                        <th>Download</th>
-                        <th>Delete</th>
+                        <td align="center">Id</td>
+                        <td align="center">Title</td>
+                        <td align="center">Download Format</td>
+                        <td align="center">Download</td>
+                        <td align="center">Delete</td>
                     </tr>
                     <?php
                     fetchDownloaded($conn, $id);
                     ?>
                 </table>
-                <button type="submit" name="delete">Delete</button>
+                <button type="submit" name="delete" class="delete">Delete</button>
+            </form>
+            </form>
+            <form action="includes/alterData.inc.php" method="post">
+                <table>
+                    <tr>
+                        <td>Video Id</td>
+                        <td><input type="text" name="video_id"></td>
+                    </tr>
+                    <tr>
+                        <td>New video title</td>
+                        <td><input type="text" name="title"></td>
+                    </tr>
+                </table>
+                <button type="submit" name="update" class="update">Update</button>
             </form>
         </div>
     </section>

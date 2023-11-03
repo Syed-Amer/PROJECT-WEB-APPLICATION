@@ -115,6 +115,7 @@ function fetchDownloaded($conn, $id)
 
     foreach ($rows as $row) {
         echo '<tr align="center">';
+        echo '<td>' . $row['video_id'] . '</td>';
         echo '<td>' . $row['title'] . '</td>';
         echo '<td>' . $row['download_format'] . '</td>';
         echo '<td><a href="' . $row['filepath'] . '" download>Download</td>';

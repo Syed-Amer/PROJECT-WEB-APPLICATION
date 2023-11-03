@@ -33,7 +33,7 @@
             <label>Confirm Password</label>
             <input type="password" name="rePassword" placeholder="Re-Enter your password">
 
-            <button type="submit" name="submit">Create Admin</button>
+            <button type="submit" name="submit" class="register">Create Admin</button>
         </form>
     </section>
 </body>

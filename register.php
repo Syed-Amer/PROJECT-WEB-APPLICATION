@@ -34,7 +34,7 @@
             <input type="password" name="rePassword" placeholder="Re-Enter your password">
 
             <a href="login.php">Already have account?</a>
-            <button type="submit" name="submit">Register</button>
+            <button type="submit" name="submit" class="register">Register</button>
         </form>
     </section>
 </body>

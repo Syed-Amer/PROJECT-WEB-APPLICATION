@@ -25,7 +25,7 @@
                 <select name="select" id="select">
                     <?php getAllUsersId($conn); ?>
                 </select>
-                <button type="submit" name="submit">Submit</button>
+                <button type="submit" name="submit" class="submit">Submit</button>
             </form>
             <form action="includes/deleteDownloaded.inc.php" method="post">
                 <?php
@@ -38,12 +38,11 @@
                 }
                 if (isset($_GET['id'])) {
                     $id = $_GET['id'];
-                    echo "$id";
                     echo '<table border="1">';
-                    echo '<tr><td>Title</td><td>Format</td><td>Download</td><td>Delete</td></tr>';
+                    echo '<tr align="center"><td>Id</td><td>Title</td><td>Format</td><td>Download</td><td>Delete</td></tr>';
                     fetchDownloaded($conn, $id);
                     echo '</table>';
-                    echo '<button type="submit" name="delete">Delete</button>';
+                    echo '<button type="submit" name="delete" class="delete">Delete</button>';
                 }
                 ?>
             </form>
@@ -58,15 +57,11 @@
                         <td><input type="text" name="title"></td>
                     </tr>
                     <tr>
-                        <td>New video format</td>
-                        <td><input type="text" name="format"></td>
-                    </tr>
-                    <tr>
                         <td>New filepath</td>
                         <td><input type="text" name="filepath"></td>
                     </tr>
                 </table>
-                <button type="submit" name="update">Update</button>
+                <button type="submit" name="update" class="update">Update</button>
             </form>
         </div>
     </section>
