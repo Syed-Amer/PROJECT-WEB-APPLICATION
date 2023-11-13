@@ -183,3 +183,26 @@ function alterData($conn, $videoId, $attr, $newData) {
         die();
     }
 }
+
+function getUsername($conn, $id) {
+    $sql = "SELECT username FROM Users WHERE user_id = '$id';";
+    $result = $conn->query($sql);
+
+    if(!$result){
+        die("Failed");
+    }
+
+    $row = $result->fetch_assoc();
+    return $row['username'];
+}
+function getUserEmail($conn, $id) {
+    $sql = "SELECT email FROM Users WHERE user_id = '$id';";
+    $result = $conn->query($sql);
+
+    if(!$result){
+        die("Failed");
+    }
+
+    $row = $result->fetch_assoc();
+    return $row['email'];
+}

@@ -1,6 +1,6 @@
 section {
     width: 100%;
-    height: calc(100vh - 80px);
+    height: 100vh;
     display: flex;
     justify-content: center;
 }
@@ -9,6 +9,7 @@ section div {
     display: flex;
     background-color: #1e2030;
     width: 70%;
+    height: 100%;
     align-items: center;
     flex-direction: column;
 }
@@ -31,12 +32,10 @@ label {
 }
 
 .submit {
-    appearance: button;
     background-color: #1899D6;
     border: solid transparent;
     border-radius: 16px;
     border-width: 0 0 4px;
-    box-sizing: border-box;
     color: #FFFFFF;
     cursor: pointer;
     display: inline-block;
@@ -44,19 +43,14 @@ label {
     font-size: 15px;
     font-weight: 700;
     letter-spacing: .8px;
-    line-height: 20px;
-    margin: 0;
     outline: none;
-    overflow: visible;
     padding: 13px 16px;
     text-align: center;
     text-transform: uppercase;
-    touch-action: manipulation;
     transform: translateZ(0);
     transition: filter .2s;
     user-select: none;
     -webkit-user-select: none;
-    vertical-align: middle;
     white-space: nowrap;
     margin-left: 20px;
 }
@@ -94,7 +88,7 @@ label {
 
 .submit:disabled,
 .update:disabled,
-.delete:disabled{
+.delete:disabled {
     cursor: auto;
 }
 
@@ -176,8 +170,6 @@ label {
     vertical-align: middle;
     white-space: nowrap;
     margin-top: 20px;
-    position: fixed;
-    right: 47%;
 }
 
 .update:after {
@@ -208,4 +200,12 @@ select:focus {
 
 table {
     margin-top: 30px;
+}
+
+.error {
+    color: #e64553;
+}
+
+.success{
+    color: #8caaee;
 }

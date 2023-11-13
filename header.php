@@ -20,7 +20,7 @@ session_start();
         if (!$_SESSION['admin']) {
           echo "<li><a href='ytdl.php'>Downloader</a></li>";
           echo "<li><a href='history.php'>History</a></li>";
-          echo "<li><a href='#'>Manual</a></li>";
+          echo "<li><a href='manual.php'>Manual</a></li>";
         }
 
         // login and admin

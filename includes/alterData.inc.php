@@ -4,9 +4,11 @@ include_once 'functions.inc.php';
 session_start();
 
 if (isset($_POST['update'])) {
+
+    $selectedId = $_SESSION['selectId'];
     if (empty($_POST['video_id'])) {
         if ($_SESSION['admin']) {
-            header("location: ../historyAdmin.php?error=EmptyForm");
+            header("location: ../historyAdmin.php?error=EmptyForm&id=$selectedId");
             exit();
         }
         header("location: ../history.php?error=EmptyForm");
@@ -25,7 +27,7 @@ if (isset($_POST['update'])) {
 
     if ($row['count'] <= 0) {
         if ($_SESSION['admin']) {
-            header("location: ../historyAdmin.php?error=NotExist");
+            header("location: ../historyAdmin.php?error=NotExist&id=$selectedId");
             exit();
         }
         header("location: ../history.php?error=NotExist");
@@ -42,7 +44,8 @@ if (isset($_POST['update'])) {
     }
 
     if ($_SESSION['admin']) {
-        header("location: ../historyAdmin.php?update=updated");
+        header("location: ../historyAdmin.php?update=updated&id=$selectedId");
+        exit();
     }
 
     header("location: ../history.php?update=updated");

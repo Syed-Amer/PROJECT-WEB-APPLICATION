@@ -39,6 +39,23 @@
                 if (isset($_GET['id'])) {
                     $id = $_GET['id'];
                     echo '<table border="1">';
+                    echo
+                    '<tr align="center">
+                    <td>Id</td>
+                    <td>Username</td>
+                    <td>Email</td>
+                    </tr>
+
+                    <tr>
+                    <td>' . $id . '</td>
+                    <td>' . getUsername($conn, $id) . ' </td>
+                    <td>' . getUserEmail($conn, $id) . ' </td>
+                    </tr>';
+
+                    echo '<tr></tr>';
+                    echo '<tr></tr>';
+                    echo '</table>';
+                    echo '<table border="1">';
                     echo '<tr align="center"><td>Id</td><td>Title</td><td>Format</td><td>Download</td><td>Delete</td></tr>';
                     fetchDownloaded($conn, $id);
                     echo '</table>';
@@ -46,7 +63,16 @@
                 }
                 ?>
             </form>
-            <form action="includes/alterData.inc.php" method="post">
+            <form action="includes/alterData.inc.php" method="post" class="updateForm">
+
+                <?php
+                if(isset($_GET['error'])) {
+                    echo '<p class="error">' . $_GET['error'] . '</p>';
+                }
+                if(isset($_GET['update'])) {
+                    echo '<p class="success">' . $_GET['update'] . '</p>';
+                }
+                ?>
                 <table>
                     <tr>
                         <td>Video Id</td>
@@ -61,7 +87,7 @@
                         <td><input type="text" name="filepath"></td>
                     </tr>
                 </table>
-                <button type="submit" name="update" class="update">Update</button>
+                <button type="submit" name="update" class="update">Update</button><br><br>
             </form>
         </div>
     </section>

@@ -1,48 +1,133 @@
-<!-- HTML !-->
-<button class="button-29" role="button">Button 29</button>
+Title: Hotel Restaurant Automation Training Module
 
-/* CSS */
-.button-29 {
-  align-items: center;
-  appearance: none;
-  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
-  border: 0;
-  border-radius: 6px;
-  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: "JetBrains Mono",monospace;
-  height: 48px;
-  justify-content: center;
-  line-height: 1;
-  list-style: none;
-  overflow: hidden;
-  padding-left: 16px;
-  padding-right: 16px;
-  position: relative;
-  text-align: left;
-  text-decoration: none;
-  transition: box-shadow .15s,transform .15s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  will-change: box-shadow,transform;
-  font-size: 18px;
-}
+1. Program Tentative
 
-.button-29:focus {
-  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
-}
+Module 1: An overview of the automation system for hotel restaurants
+Module 2: Customer, hotel attendant and chef roles and responsibilities
+Module 3: Menu Book Management
+Module 4: Ordering and Payment Process
+Module 5: Food Preparation and Serving
+Module 6: Tips on Handling and Interaction with Customers
+Module 7: Invoices generation
+Module 8: System Integration and Data Flow
+Module 9: Troubleshooting and Support
+Module 10: Final Assessment and Certification
 
-.button-29:hover {
-  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
-  transform: translateY(-2px);
-}
+2. Introduction/Definitions
 
-.button-29:active {
-  box-shadow: #3c4fe0 0 3px 7px inset;
-  transform: translateY(2px);
-}
+This training manual serves as a complete guide for the Hotel Restaurant Automation System's deployment and operation. This is how the terminology will be.
+
+    1. Customer:
+    A restaurant customer recognized by a table number and the amount of people in their table.
+
+    2. Hotel Attendant:
+    Employees in charge of taking orders, serving meals, processing payments, and providing customer service in a restaurant.
+
+    3. Chef:
+    A person who is in charge of making the food on the daily menu in the kitchen.
+
+    4. Customer Identification:
+    The process of identifying a customer by their table number and the number of people in their group.
+
+    5. Order Processing:
+    The steps used to take and process food orders from customers, which include picking out things from a menu list.
+
+    6. Payment Handling:
+    The process for receiving tipping, cash, and credit card payments made by customers for their orders.
+
+    7. Food Serving:
+    the process of bringing food orders to tables and making sure customers have a good meal.
+
+    8. Customer Interaction:
+    Engaging and communicating with customers at restaurants to make sure their requirements are addressed and to improve their dining experience.
+
+    9. Role-Based Responsibilities:
+    The specific duties and tasks associated with each role (customer, hotel attendant, chef) in the restaurant operation.
+
+    10. Menu book:
+    A book that lists available food items, including item numbers, food names, prices, and descriptions.
+
+    11. Tips:
+    Additional money provided by customers as a token of appreciatio for the service quality
+
+    12. Customer Satisfaction:
+    The level of contentment and positive experience reported by restaurant customers after their visit.
+
+
+The training is designed to equip staff with the knowledge and skills to effectively use the system, ensuring a smooth operation of the hotel restaurant.
+
+3. Aims, Expectations, Measures
+
+This training will enable staff to understand, use, and maintain the automation system effectively.
+It is believed that participants will meet customer service requirements and become skilled in their roles.
+
+4. Flow Chart
+
+- The manual follows a sequential order of modules, progressing from system introduction to advanced concepts.
+
+5. Training Methods, Support, Media, Materials
+
+Format for this training will be:
+- Classroom sessions, 
+- hands-on practice, 
+- Q&A sessions.
+- role-play scenarios
+
+The training materials will be :
+- Presentation slides, 
+- case studies, system demos, 
+- practice scenarios.
+
+Experienced trainers and a dedicated support team will be provided as tutor and support
+
+6. Training Content/Elements
+
+Module 1: Introduction to the Hotel Restaurant Automation System
+- Overview of the hotel restaurant system
+
+Module 2: Roles and Responsibilities
+- Customer role and identification
+- Hotel Attendant responsibilities
+- Chef's duties and kitchen operations
+
+Module 3: Menu Book Management
+- Menu book structure
+- Food items and pricing
+
+Module 4: Ordering and Payment Process
+- Customer orders 
+- Sending orders to the chef
+- Handling customer payments
+
+Module 5: Food Preparation and Serving
+- Chef's role in cooking daily menu
+- Hotel Attendant serving and customer interaction
+- Quality control and clean food and kitchen 
+
+Module 6: Handling Tips and Customer Interaction
+- Receiving tips
+- Efficient customer service
+
+Module 7: Bill Generation and Customer Satisfaction
+- Bill generation
+- Ensuring customer satisfaction
+
+Module 8: System Integration and Data Flow
+- Understanding the data flow between roles
+- System troubleshooting and error handling
+
+Module 9: Troubleshooting and Support
+- Common issues and solutions
+- Contacting support for assistance
+
+Module 10: Final Assessment and Certification
+- Knowledge assessment
+- Certification and recognition
+
+7. Bibliography and References
+
+https://www.pearsonhighered.com/assets/samplechapter/0/1/3/4/013474506X.pdf
+
+8. Copyright and Authorship Information
+
+Copyright Notice: The content and materials in this training module are the property of [Your Organization Name]. All rights are reserved. Reproduction or distribution without permission is prohibited.
