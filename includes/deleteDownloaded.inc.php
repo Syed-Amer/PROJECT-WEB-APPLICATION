@@ -9,6 +9,7 @@ if (isset($_POST['delete'])) {
         deleteVideo($conn, $video);
     }
     if (isset($_SESSION['admin'])) {
+        // header("location: ../historyAdmin.php?id=$id");
         header("location: ../historyAdmin.php?id=$id");
         exit();
     }

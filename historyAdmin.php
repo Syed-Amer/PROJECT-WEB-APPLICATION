@@ -28,48 +28,27 @@
                 <button type="submit" name="submit" class="submit">Submit</button>
             </form>
             <form action="includes/deleteDownloaded.inc.php" method="post">
-                <?php
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    if (isset($_POST['select'])) {
-                        $id = $_POST['select'];
-                        $_SESSION['selectId'] = $id;
-                        header("location: historyAdmin.php?id=$id");
+                <table>
+                    <?php
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                        if (isset($_POST['select'])) {
+                            $id = $_POST['select'];
+                            $_SESSION['selectId'] = $id;
+                            header("location: historyAdmin.php?id=$id");
+                        }
                     }
-                }
-                if (isset($_GET['id'])) {
-                    $id = $_GET['id'];
-                    echo '<table border="1">';
-                    echo
-                    '<tr align="center">
-                    <td>Id</td>
-                    <td>Username</td>
-                    <td>Email</td>
-                    </tr>
-
-                    <tr>
-                    <td>' . $id . '</td>
-                    <td>' . getUsername($conn, $id) . ' </td>
-                    <td>' . getUserEmail($conn, $id) . ' </td>
-                    </tr>';
-
-                    echo '<tr></tr>';
-                    echo '<tr></tr>';
-                    echo '</table>';
-                    echo '<table border="1">';
-                    echo '<tr align="center"><td>Id</td><td>Title</td><td>Format</td><td>Download</td><td>Delete</td></tr>';
-                    fetchDownloaded($conn, $id);
-                    echo '</table>';
-                    echo '<button type="submit" name="delete" class="delete">Delete</button>';
-                }
-                ?>
+                    handleFormSubmission($conn);
+                    ?>
+                </table>
+                <button name="delete" class="delete">Delete</button>
             </form>
             <form action="includes/alterData.inc.php" method="post" class="updateForm">
 
                 <?php
-                if(isset($_GET['error'])) {
+                if (isset($_GET['error'])) {
                     echo '<p class="error">' . $_GET['error'] . '</p>';
                 }
-                if(isset($_GET['update'])) {
+                if (isset($_GET['update'])) {
                     echo '<p class="success">' . $_GET['update'] . '</p>';
                 }
                 ?>

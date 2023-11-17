@@ -89,12 +89,14 @@ function getUserId($conn, $usernameOrEmail)
 
 function insertDownloadedVideo($conn, $userId, $link, $title, $format, $path)
 {
-    $sql = "INSERT INTO Videos (user_id, title, video_url, download_format, filepath) VALUES ('$userId', '$title', '$link', '$format', '$path');";
-    $result = $conn->query($sql);
-
-    if (!$result) {
-        die("Query failed: " . $conn->error);
+    $sql = "INSERT INTO Videos (user_id, title, video_url, download_format, filepath) VALUES (?, ?, ?, ?, ?);";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        echo "stmt failed";
     }
+    mysqli_stmt_bind_param($stmt, "issss", $userId, $title, $link, $format, $path);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
 }
 
 function fetchDownloaded($conn, $id)
@@ -118,21 +120,22 @@ function fetchDownloaded($conn, $id)
         echo '<td>' . $row['video_id'] . '</td>';
         echo '<td>' . $row['title'] . '</td>';
         echo '<td>' . $row['download_format'] . '</td>';
-        echo '<td><a href="' . $row['filepath'] . '" download>Download</td>';
+        echo '<td><a href="' . $row['filepath'] . '" download="' . $row['title'] . '">Download</td>';
         echo '<td><input type="checkbox" name="video[]" value="' . $row['video_id'] . '"></td>';
     }
 }
 
 function alreadyDownload($conn, $title, $format, $userId)
 {
-    $sql = "SELECT COUNT(*) as count FROM Videos WHERE title = '$title' AND download_format = '$format' AND user_id = '$userId'";
-    $result = $conn->query($sql);
-
-    if (!$result) {
-        die("Query Failed" . $conn->error);
+    $sql = "SELECT COUNT(*) as count FROM Videos WHERE title =? AND download_format =? AND user_id =?";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        echo "SQL statement failed";
     }
-
-    $row = $result->fetch_assoc();
+    mysqli_stmt_bind_param($stmt, "ssi", $title, $format, $userId);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    $row = mysqli_fetch_assoc($result);
 
     return ($row['count'] > 0);
 }
@@ -166,43 +169,81 @@ function getAllUsersId($conn)
     }
 }
 
-function deleteVideo($conn, $videoId) {
+function deleteVideo($conn, $videoId)
+{
     $sql = "DELETE FROM Videos WHERE video_id = '$videoId'";
     $result = $conn->query($sql);
 
-    if(!$result) {
+    if (!$result) {
         die("Query failed");
     }
 }
 
-function alterData($conn, $videoId, $attr, $newData) {
+function alterData($conn, $videoId, $attr, $newData)
+{
     $sql = "UPDATE Videos SET $attr = '$newData' WHERE video_id = '$videoId';";
     $result = $conn->query($sql);
 
-    if (!$result){
+    if (!$result) {
         die();
     }
 }
 
-function getUsername($conn, $id) {
+function getUsername($conn, $id)
+{
     $sql = "SELECT username FROM Users WHERE user_id = '$id';";
     $result = $conn->query($sql);
 
-    if(!$result){
+    if (!$result) {
         die("Failed");
     }
 
     $row = $result->fetch_assoc();
     return $row['username'];
 }
-function getUserEmail($conn, $id) {
+function getUserEmail($conn, $id)
+{
     $sql = "SELECT email FROM Users WHERE user_id = '$id';";
     $result = $conn->query($sql);
 
-    if(!$result){
+    if (!$result) {
         die("Failed");
     }
 
     $row = $result->fetch_assoc();
     return $row['email'];
+}
+
+function handleFormSubmission($conn)
+{
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+        $sql = "SELECT * FROM Videos WHERE user_id = '$id';";
+
+        $result = $conn->query($sql);
+
+        if (!$result) {
+            die("Query failed: " . $conn->error);
+        }
+
+        echo '<table border="1">';
+        echo
+        '<tr align="center">
+        <td>Id</td>
+        <td>Username</td>
+        <td>Email</td>
+        </tr>
+
+        <tr>
+        <td>' . $id . '</td>
+        <td>' . getUsername($conn, $id) . ' </td>
+        <td>' . getUserEmail($conn, $id) . ' </td>
+        </tr>';
+
+        echo '</table>';
+        echo '<table border="1">';
+        echo '<tr align="center"><td>Id</td><td>Title</td><td>Format</td><td>Download</td><td>Delete</td></tr>';
+        fetchDownloaded($conn, $id);
+        echo '</table>';
+    }
 }

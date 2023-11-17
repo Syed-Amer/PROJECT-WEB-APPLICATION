@@ -7,6 +7,8 @@
   <title>Home Page</title>
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/footer.css">
+
 </head>
 
 <body>
@@ -25,7 +27,7 @@
         </tr>
 
         <tr align="justify">
-          <td>Are you tired of encountering barriers when trying to download your favorite videos and music from YouTube? Perhaps you're looking for a convenient solution that doesn't require subscribing to YouTube Premium? Look no further!At [Your Website Name], we understand the frustration of wanting to save your favorite content for offline use without the hassle of premium subscriptions. That's why we've designed the perfect platform for you.<br>
+          <td>Are you tired of encountering barriers when trying to download your favorite videos and music from YouTube? Perhaps you're looking for a convenient solution that doesn't require subscribing to YouTube Premium? Look no further!At my website, I understand the frustration of wanting to save your favorite content for offline use without the hassle of premium subscriptions. That's why I've designed the perfect platform for you.<br>
             <video width="100%" controls>
               <source src="video/Web App 2.webm" type="video/mp4">
             </video>
@@ -42,13 +44,13 @@
         <tr>
           <td align="justify">
             <ul>
-              <li>Effortless Downloads: With our user-friendly platform, downloading videos and music from YouTube is a breeze. We've simplified the process, so you don't have to navigate through a maze of subscriptions and restrictions.</li>
+              <li>Effortless Downloads: With our user-friendly platform, downloading videos and music from YouTube is a breeze. It simplified the process, so you don't have to navigate through a maze of subscriptions and restrictions.</li>
             </ul>
             <ul>
-              <li>No Premium Required: Say goodbye to the premium paywall. [Your Website Name] is your gateway to unlimited downloads without any subscription fees. We believe that content should be accessible to everyone, and we've made it possible.</li>
+              <li>No Premium Required: Say goodbye to the premium paywall. This is your gateway to unlimited downloads without any subscription fees. I believe that content should be accessible to everyone, and I've made it possible.</li>
             </ul>
             <ul>
-              <li>Superior Quality: Enjoy high-quality video and audio downloads. Our service ensures that you get the best experience, every time.</li>
+              <li>Superior Quality: Enjoy high-quality video and audio downloads. My service ensures that you get the best experience, every time.</li>
             </ul>
             <ul>
               <li>Hassle-Free Experience: Navigating through our platform is straightforward, and you won't encounter any hidden fees or complicated procedures. We've eliminated the guesswork.</li>
@@ -76,10 +78,10 @@
         <tr align="justify">
           <td>This website intended for personal and fair use only. Downloading content that infringes on copyright laws is against our policies and goes against the principles of responsible internet usage.</td>
         </tr>
-
       </table>
     </div>
   </section>
+  <?php include_once 'footer.php'; ?>
 </body>
 
 </html>

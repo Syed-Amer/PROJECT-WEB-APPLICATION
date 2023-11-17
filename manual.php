@@ -36,7 +36,7 @@
 
                 <tr>
                     <td align="justify">
-                        Firstly, you need to have an account to use this website main function. If you already have an account you can skip this step. In the register page, you will be prompt to insert your username, email and password. Username must be unique. If someone already taken your username, you cannot use it.
+                        Firstly, you need to have an account to use this website main function. If you already have an account you can skip this step. In the register page, you will be prompt to insert your username, email and password. Username must be unique. If someone already taken your username, you cannot use it.<br>
                         <video width="100%" autoplay>
                             <source src="video/register tutorial.mp4" type="video/mp4">
                         </video>

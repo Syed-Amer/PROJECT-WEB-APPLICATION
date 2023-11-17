@@ -35,6 +35,14 @@
             </form>
             </form>
             <form action="includes/alterData.inc.php" method="post">
+                <?php
+                if (isset($_GET['error'])) {
+                    echo '<p class="error">' . $_GET['error'] . '</p>';
+                }
+                if (isset($_GET['update'])) {
+                    echo '<p class="success">' . $_GET['update'] . '</p>';
+                }
+                ?>
                 <table>
                     <tr>
                         <td>Video Id</td>
