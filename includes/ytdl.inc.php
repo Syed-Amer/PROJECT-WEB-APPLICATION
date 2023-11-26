@@ -4,15 +4,13 @@ if (isset($_POST['submit'])) {
     include_once 'db.inc.php';
     include_once 'functions.inc.php';
 
-    // // get SESSION variables
-    // $usernameOrEmail = $_SESSION['usernameOrEmail'];
+    // get SESSION variables
+    $usernameOrEmail = $_SESSION['usernameOrEmail'];
 
-    // // get userid 
-    // $id = getUserId($conn, $usernameOrEmail);
+    // get userid 
+    $id = getUserId($conn, $usernameOrEmail);
 
-    // $_SESSION['id'] = $id;
-
-    $id = $_SESSION['user_id'];
+    $_SESSION['id'] = $id;
 
     $videoUrl = $_POST['link'];
     $downloadFormat = $_POST['format'];
